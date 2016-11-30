@@ -46,11 +46,14 @@ def sort ( list ):
     # add the items as lists so the merge operation can assume list inputs
     listQ.append([item])
 
+  print "Starting listQ %s" % (listQ)
+
   # once we get to one item in the queue we've been fully sorted
   while len(listQ) > 1:
     # pop the top two items and sort them, then append the resulting
     # list item to the end of the queue.
     listQ.append( mergesort( listQ.popleft(), listQ.popleft() ) )
+    print "Current listQ %s" % (listQ)
 
   print listQ
   
